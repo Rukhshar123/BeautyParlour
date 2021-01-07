@@ -1,0 +1,82 @@
+{% include 'admin_header.html' %}
+{% load static %}
+<body>
+
+
+	<div class="wrapper">
+		<div class="container">
+			<div class="row">
+				<div class="span3">
+					{% include 'admin_sidebar.html' %}<!--/.sidebar-->
+				</div><!--/.span3-->
+
+
+				<div class="span9">
+					<div class="content">
+
+						<div class="module">
+							<div class="module-head">
+								<h3>All  Blogs</h3>
+							</div>
+							<div class="module-body">
+								<table class="table table-striped">
+								  <thead>
+									<tr>
+										<th>Sr. No</th>
+                                        <th>Title</th>
+									    <th>Description</th>
+									    <th>Date</th>
+										<th>Image</th>
+										<th>Edit</th>
+										<th>Delete</th>
+									</tr>
+								  </thead>
+
+								  <tbody>
+                                  {% for i in blog %}
+									<tr>
+										<td>{{forloop.counter}}</td>
+                                        <td>{{i.title}}</td>
+									    <td style="height:600px; width:300px;">{{i.description}}</td>
+										<td><img src="{{i.image.url}}" style="height:250px; width:250px"></td>
+										<td>{{i.date}}</td>
+										<br/>
+										<td><a href="admin_blog_edit/{{i.id}}"><img src="{% static 'images/edit_2.png' %}" style="height:25px; width:25px;"></a></td>
+										<td><a href="admin_blog_delete/{{i.id}}"><img src="{% static 'images/delete.png' %}" style="height:22px; width:22px;"></a></td>
+
+									</tr>
+                                  {% endfor %}
+
+								  </tbody>
+								</table>
+
+								<br />
+								<!-- <hr /> -->
+								<br />
+
+															</div>
+						</div><!--/.module-->
+						<br />
+
+					</div><!--/.content-->
+				</div><!--/.span9-->
+			</div>
+		</div><!--/.container-->
+	</div><!--/.wrapper-->
+
+	{% include 'admin_footer.html' %}
+
+	<script src="{% static 'scripts/jquery-1.9.1.min.js' %}"></script>
+	<script src="{% static 'scripts/jquery-ui-1.10.1.custom.min.js' %}"></script>
+	<script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+	<script src="{% static 'scripts/datatables/jquery.dataTables.js' %}"></script>
+	<script>
+		$(document).ready(function() {
+			$('.datatable-1').dataTable();
+			$('.dataTables_paginate').addClass("btn-group datatable-pagination");
+			$('.dataTables_paginate > a').wrapInner('<span />');
+			$('.dataTables_paginate > a:first-child').append('<i class="icon-chevron-left shaded"></i>');
+			$('.dataTables_paginate > a:last-child').append('<i class="icon-chevron-right shaded"></i>');
+		} );
+	</script>
+</body>

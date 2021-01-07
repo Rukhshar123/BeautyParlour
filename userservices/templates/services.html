@@ -1,0 +1,166 @@
+{% include 'header.html' %}
+{% load static %}
+
+<body>
+    <div id="betty-page"> <a href="#" class="js-betty-nav-toggle betty-nav-toggle"><i></i></a>
+        <!-- Sidebar Section -->
+        {% include 'sidebar.html' %}
+        <!-- Main Section -->
+        <div id="betty-main">
+            <!-- Services -->
+            <div class="betty-services betty-services">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h2 class="betty-heading animate-box" data-animate-effect="fadeInLeft">Our Services</h2> <span class="heading-meta animate-box" data-animate-effect="fadeInLeft">We offer a wide range of beauty services</span> </div>
+                    </div>
+                    <div class="row">
+                        {% for svs in service %}
+                        <div class="col-md-4">
+                            <div class="item animate-box" data-animate-effect="fadeInLeft">
+                                <div class="position-re o-hidden"> <img src="{{svs.image.url}}" alt="" style="height:220px; width:330px;"> </div>
+                                <div class="con">
+                                    <a href="{% url 'service_page' %}">
+                                        <h5>{{svs.service_name}}</h5>
+                                        <p><i class="ti-arrow-right"></i></p>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+
+                    </div>
+                </div>
+            </div>
+            <!-- Makeup Services -->
+            <div class="betty-makeup">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h2 class="betty-heading animate-box" data-animate-effect="fadeInLeft">Makeup</h2> <span class="heading-meta animate-box" data-animate-effect="fadeInLeft">Our makeup services</span> </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4 animate-box" data-animate-effect="fadeInLeft">
+                            <div class="betty-makeup-container">
+                                <div class="betty-makeup-img-area"><span class="flaticon-039-make-up"></span></div>
+                                <div class="betty-makeup-text-area">
+                                    <h4 class="betty-makeup-heading">Makeup</h4>
+                                    <p>We prvide all makeup services like Bridal Makeup, party makeup</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 animate-box" data-animate-effect="fadeInLeft">
+                            <div class="betty-makeup-container">
+                                <div class="betty-makeup-img-area"><span class="flaticon-007-mascara-4"></span></div>
+                                <div class="betty-makeup-text-area">
+                                    <h4 class="betty-makeup-heading">Eye Makeup</h4>
+                                    <p>Eye makeup blow your facial beauty, we are best in provide eye makeup services.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 animate-box" data-animate-effect="fadeInLeft">
+                            <div class="betty-makeup-container">
+                                <div class="betty-makeup-img-area"><span class="flaticon-013-facial-mask-1"></span></div>
+                                <div class="betty-makeup-text-area">
+                                    <h4 class="betty-makeup-heading">Facial/Cleanup</h4>
+                                    <p>Facial can feel relaxed, refreshed and rejuvenated your skin.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 animate-box" data-animate-effect="fadeInLeft">
+                            <div class="betty-makeup-container">
+                                <div class="betty-makeup-img-area"><span class="flaticon-034-eyebrow"></span></div>
+                                <div class="betty-makeup-text-area">
+                                    <h4 class="betty-makeup-heading">Threading</h4>
+                                    <p>We provide threading services include eyebrow, upperlips and face threading</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 animate-box" data-animate-effect="fadeInLeft">
+                            <div class="betty-makeup-container">
+                                <div class="betty-makeup-img-area"><span class="flaticon-018-scissors"></span></div>
+                                <div class="betty-makeup-text-area">
+                                    <h4 class="betty-makeup-heading">Haircut/Treatment</h4>
+                                    <p>We provide all type of haircut and hair treatment services</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 animate-box" data-animate-effect="fadeInLeft">
+                            <div class="betty-makeup-container">
+                                <div class="betty-makeup-img-area"><span class="flaticon-037-dressing-table"></span></div>
+                                <div class="betty-makeup-text-area">
+                                    <h4 class="betty-makeup-heading">Waxing</h4>
+                                    <p>We provide waxing services for hand, legs and body too.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Testiominals -->
+           <div class="betty-testimonial testimonials bg-img bg-fixed" data-background="{% static 'images/banner.jpg' %}">
+                <div class="container-fluid">
+                    <div class="row animate-box" data-animate-effect="fadeInLeft">
+                        <div class="section-head col-md-4">
+                            <h4>What our clients say</h4>
+                            <p>Best Services Provide by Us</p>
+                        </div>
+                        <div class="owl-carousel owl-theme col-md-8">
+                            {% for rev in review %}
+                            <div class="item-box"> <span class="quote">
+                                    <img src="{% static 'images/banner.jpg' %}" alt="">
+                                </span>
+                                <p>{{rev.review}}</p>
+                                <div class="info">
+                                    <div class="author-img"> <img src="{% static 'images/team/user.png' %}" alt=""> </div>
+                                    <div class="cont">
+                                        <h6>{{rev.firstname}}</h6> <span>{{rev.lastname}}</span>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Brands -->
+           <div class="betty-brands brands">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-12 animate-box" data-animate-effect="fadeInLeft">
+                            <h2 class="betty-heading">Our Brands</h2> <span class="heading-meta">We use only the high quality original products</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 owl-carousel owl-theme animate-box" data-animate-effect="fadeInLeft">
+                            {% for br in brand%}
+                            <div class="brand-logo">
+                                <a href=""><img src="{{br.image.url}}" alt=""></a>
+                            </div>
+                            {% endfor %}
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Footer -->
+           {% include 'footer.html' %}
+        <!-- Js -->
+        <script src="{% static 'js/jquery.min.js' %}"></script>
+        <script src="{% static 'js/modernizr-2.6.2.min.js' %}"></script>
+        <script src="{% static 'js/jquery.easing.1.3.js' %}"></script>
+        <script src="{% static 'js/bootstrap.min.js' %}"></script>
+        <script src="{% static 'js/jquery.waypoints.min.js' %}"></script>
+        <script src="{% static 'js/jquery.flexslider-min.js' %}"></script>
+        <script src="{% static 'js/sticky-kit.min.js' %}"></script>
+        <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+        <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+        <script src="{% static 'js/main.js' %}"></script>
+    </div>
+</body>
+
+
+<!-- Mirrored from duruthemes.com/demo/html/betty/multipage/services.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 27 Nov 2020 08:19:12 GMT -->
+</html>

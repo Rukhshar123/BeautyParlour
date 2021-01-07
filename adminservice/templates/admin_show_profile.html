@@ -1,0 +1,62 @@
+﻿{% include 'admin_header.html' %}
+{% load static %}
+<body>
+
+
+	<div class="wrapper">
+		<div class="container">
+			<div class="row">
+				<div class="span3">
+					{% include 'admin_sidebar.html' %}<!--/.sidebar-->
+				</div><!--/.span3-->
+
+
+				<div class="span9">
+
+					<div class="content">
+
+						<div class="module">
+							<div class="module-head">
+								<h3>Edit Profile</h3>
+							</div>
+							<div class="module-body">
+									<br />
+
+
+
+
+										{% for i in user %}
+										<div class="control-group">
+											<h3 > Name: {{i.name}}</h3>
+											<h3 > Email: {{i.email}}</h3>
+											<h3 > Contact: {{i.contact}}</h3>
+											<h3 > Adrress: {{i.speciality}}</h3>
+											<h3 ><a href="{% url 'chnage_password'%}">Change Password</a> </h3>
+										</div>
+
+
+										<div class="control-group">
+											<div class="controls">
+												<a href="admin_edit_profile/{{i.id}}"> <button type="submit" class="btn" align="center" value="">Edit Profile</button></a>
+											</div>
+										</div>
+										{% endfor %}
+
+							</div>
+						</div>
+
+
+
+					</div><!--/.content-->
+				</div><!--/.span9-->
+			</div>
+		</div><!--/.container-->
+	</div><!--/.wrapper-->
+
+	{% include 'admin_footer.html' %}
+
+	<script src="{% static 'scripts/jquery-1.9.1.min.js' %}" type="text/javascript"></script>
+	<script src="{% static 'scripts/jquery-ui-1.10.1.custom.min.js' %}" type="text/javascript"></script>
+	<script src="{% static 'bootstrap/js/bootstrap.min.js' %}" type="text/javascript"></script>
+	<script src="{% static 'scripts/flot/jquery.flot.js' %}" type="text/javascript"></script>
+</body>

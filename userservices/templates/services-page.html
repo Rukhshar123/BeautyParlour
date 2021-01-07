@@ -1,0 +1,71 @@
+{% include 'header.html' %}
+{% load static %}
+
+<body>
+    <div id="betty-page"> <a href="#" class="js-betty-nav-toggle betty-nav-toggle"><i></i></a>
+        <!-- Sidebar Section -->
+         {% include 'sidebar.html' %}
+        <!-- Main Section -->
+        <div id="betty-main">
+            <!-- Services Page -->
+            <div class="betty-services">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-8 animate-box" data-animate-effect="fadeInLeft">
+                            <div class="mb-30"> <img src="{% static 'images/services/service.jpg' %}" class="img-fluid mb-30" alt="">
+                                <h3>Skin Treatments</h3>
+                                <p>Skin treatments include facials, cleanup and Dtan services. Our skin has many senssitive cells which needs deep cleansing and moisturising. Massage and steam treatment to remove extra dirt. The facial uses products with ingredients that are effective in diminishing the signs of aging.</p>
+                            </div>
+                            <!-- Price -->
+                            <div class="row services-price mb-30">
+                                <div class="col-md-12">
+                                    {% for svs in service %}
+                                    <div class="services-price-info">
+                                        <h5 class="title">{{svs.service_name}}</h5>
+                                        <p>{{svs.description}}</p>
+                                    </div>
+                                    {% endfor %}
+                                      </div>
+                            </div>
+                        </div>
+                        <!-- Sidebar -->
+                        <div class="col-md-4 animate-box" data-animate-effect="fadeInLeft">
+                            <div class="betty-sidebar-part">
+                                <div class="betty-sidebar-block betty-sidebar-block-categories">
+                                    <div class="betty-sidebar-block-title">Our Services</div>
+                                    <div class="betty-sidebar-block-content">
+                                        <ul class="ul1">
+                                            <li><a class="active" href="">Bridal Makeup</a></li>
+                                            <li><a href="">Engagement/Party Makeup</a></li>
+                                            <li><a href="">Hair Cut/Treatment</a></li>
+                                            <li><a href="">Threading</a></li>
+                                            <li><a href="">Facial</a></li>
+                                            <li><a class="active" href="">Waxing</a></li>
+                                            <li><a href="">Manicure & Pedicure</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Footer -->
+           {% include 'footer.html' %}
+        <!-- Js -->
+        <script src="{% static 'js/jquery.min.js' %}"></script>
+        <script src="{% static 'js/modernizr-2.6.2.min.js' %}"></script>
+        <script src="{% static 'js/jquery.easing.1.3.js' %}"></script>
+        <script src="{% static 'js/bootstrap.min.js' %}"></script>
+        <script src="{% static 'js/jquery.waypoints.min.js' %}"></script>
+        <script src="{% static 'js/jquery.flexslider-min.js' %}"></script>
+        <script src="{% static 'js/sticky-kit.min.js' %}"></script>
+        <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+        <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+        <script src="{% static 'js/main.js' %}"></script>
+    </div>
+</body>
+
+
+<!-- Mirrored from duruthemes.com/demo/html/betty/multipage/services-page.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 27 Nov 2020 08:19:24 GMT -->
+</html>

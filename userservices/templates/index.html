@@ -1,0 +1,183 @@
+{% include 'header.html' %}
+{% load static %}
+
+<body>
+    <div id="betty-page"> <a href="#" class="js-betty-nav-toggle betty-nav-toggle"><i></i></a>
+        <!-- Sidebar Section -->
+           {% include 'sidebar.html' %}
+        <!-- Main Section -->
+        <div id="betty-main">
+            <aside id="betty-hero" class="js-fullheight">
+                <!-- Slider -->
+                  <div class="flexslider js-fullheight">
+                    <ul class="slides">
+                        <li style="background-image: url({% static 'images/slider/makeup.png' %});">
+                            <div class="overlay"></div>
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-md-12 js-fullheight slider-text">
+                                        <div class="slider-text-inner">
+                                            <div class="desc">
+                                                <h1>Everthing is possible with our Services!</h1>
+                                                <p>We do the best makeup</p>
+                                                <div class="btn btn-contact"><a href="tel:7600513083">Call for an appointment</a></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li style="background-image: url({% static 'images/slider/haircut-01.png' %});">
+                            <div class="overlay"></div>
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-md-12 js-fullheight slider-text">
+                                        <div class="slider-text-inner">
+                                            <div class="desc">
+                                                <h1>Welcome to Dulhan Beauty Parlour!</h1>
+                                                <p>Everthing is possible with our Services!</p>
+                                                <div class="btn btn-contact"><a href="tel:76005 13083">Call for an appointment</a></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li style="background-image: url({% static 'images/slider/bride-01.png' %});">
+                            <div class="overlay"></div>
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-md-12 js-fullheight slider-text">
+                                        <div class="slider-text-inner">
+                                            <div class="desc">
+                                                <h1>Everthing is possible with our Services!</h1>
+                                                <p>We make the best hairdressing </p>
+                                                <div class="btn btn-contact"><a href="tel:76005 13083">Call for an appointment</a></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </aside>
+            <!-- Services -->
+            <div class="betty-home-services betty-services">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-12 animate-box" data-animate-effect="fadeInLeft">
+                            <h2 class="betty-heading">Our Services</h2> <span class="heading-meta">We offer a wide range of beauty services</span>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        {% for svs in service %}
+                        <div class="col-md-4">
+                            <div class="item animate-box" data-animate-effect="fadeInLeft">
+                                <div class="position-re o-hidden"> <img src="{{svs.image.url}}" alt="" style="height:220px; width:330px;"> </div>
+                                <div class="con">
+                                    <a href="services-page.html">
+                                        <h5>{{svs.service_name}}</h5>
+                                        <p><i class="ti-arrow-right"></i></p>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                       </div>
+            </div>
+            <!-- Blog -->
+            <div class="betty-home-blog">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-12 animate-box" data-animate-effect="fadeInLeft">
+                            <h2 class="betty-heading">Latest News</h2> <span class="heading-meta">Read about latest Beauty Tips</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        {% for news in news %}
+                        <div class="col-md-4">
+                            <div class="blog-entry animate-box" data-animate-effect="fadeInLeft">
+                                <a href="post.html" class="blog-img"><img src="{{news.image.url}}" class="img-fluid" alt="" style="width:320px; height:220px;"></a>
+                                <div class="desc"> <span><a href="#">{{news.news_header}}</a></span>
+                                    <h4>{{news.news_description}}</h4> <span class="text-right">{{news.date}}</span>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 text-center animate-box" data-animate-effect="fadeInLeft">
+                            <p class="btn btn-contact"><a href="blog.html">All Blog Post</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Testiominals -->
+            <div class="betty-testimonial testimonials bg-img bg-fixed" data-background="{% static 'images/banner.jpg' %}">
+                <div class="container-fluid">
+                    <div class="row animate-box" data-animate-effect="fadeInLeft">
+                        <div class="section-head col-md-4">
+                            <h4>What our clients say</h4>
+                            <p>Best Services Provide by Us</p>
+                        </div>
+                        <div class="owl-carousel owl-theme col-md-8">
+                            {% for rev in review %}
+                            <div class="item-box"> <span class="quote">
+                                    <img src="{% static 'images/banner.jpg' %}" alt="">
+                                </span>
+                                <p>{{rev.review}}</p>
+                                <div class="info">
+                                    <div class="author-img"> <img src="{% static 'images/team/user.png' %}" alt=""> </div>
+                                    <div class="cont">
+                                        <h6>{{rev.firstname}}</h6> <span>{{rev.lastname}}</span>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                                  </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Brands -->
+            <div class="betty-brands brands">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-12 animate-box" data-animate-effect="fadeInLeft">
+                            <h2 class="betty-heading">Our Brands</h2> <span class="heading-meta">We use only the high quality original products</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 owl-carousel owl-theme animate-box" data-animate-effect="fadeInLeft">
+                            {% for br in brand%}
+                            <div class="brand-logo">
+                                <a href=""><img src="{{br.image.url}}" alt=""></a>
+                            </div>
+                            {% endfor %}
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Footer -->
+           {% include 'footer.html' %}
+        <!-- Js -->
+        <script src="{% static 'js/jquery.min.js' %}"></script>
+        <script src="{% static 'js/modernizr-2.6.2.min.js'%}"></script>
+        <script src="{% static 'js/jquery.easing.1.3.js'%}"></script>
+        <script src="{% static 'js/bootstrap.min.js'%}"></script>
+        <script src="{% static 'js/jquery.waypoints.min.js'%}"></script>
+        <script src="{% static 'js/jquery.flexslider-min.js'%}"></script>
+        <script src="{% static 'js/sticky-kit.min.js'%}"></script>
+        <script src="{% static 'js/jquery.magnific-popup.min.js'%}"></script>
+        <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+        <script src="{% static 'js/main.js' %}"></script>
+    </div>
+</body>
+
+<!-- Mirrored from duruthemes.com/demo/html/betty/multipage/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 27 Nov 2020 08:18:46 GMT -->
+</html>

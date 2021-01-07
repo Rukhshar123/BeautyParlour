@@ -1,0 +1,120 @@
+{% include 'header.html' %}
+{% load static %}
+
+<body>
+    <div id="betty-page"> <a href="#" class="js-betty-nav-toggle betty-nav-toggle"><i></i></a>
+        <!-- Sidebar Section -->
+        {% include 'sidebar.html' %}
+        <!-- Main Section -->
+        <div id="betty-main">
+            <!-- Contact -->
+            <div class="betty-contact">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-12 animate-box" data-animate-effect="fadeInLeft">
+                           <h2 class="betty-heading">Contact Us</h2>
+                           <span class="heading-meta">How to find our beauty parlour</span>
+                        </div>
+                    </div>
+                    <!-- Map Section-->
+                    <div class="map-section">
+                        <div class="row">
+                        <div class="col-md-12 col-sm-12 animate-box" data-animate-effect="fadeInLeft">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3651.980454819538!2d72.98141131481523!3d23.74807638459051!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395dbb518f0afc57%3A0x2882cee84ca36d16!2sDulhan%20Beauty%20Parlour!5e0!3m2!1sen!2sin!4v1606997244408!5m2!1sen!2sin"  frameborder="0" style="border:0; height: 400px; width: 1150px;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                                <!--  <iframe src="https://maps.google.com/?q=23.7480757,72.9814116&output=svembed"
+                    style="height: 400px; width: 1000px; border:0"></iframe> -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <!-- Contact Info -->
+                      <div class="col-md-5 mb-30 animate-box" data-animate-effect="fadeInLeft">
+                            <div class="betty-contact-info2">
+                                <div class="feat-inner2"> <span class="icon et-phone"></span>
+                                    <div class="feat-info2">
+                                        <h5 style="color:white;">Phone Text</h5>
+                                        <h6>76005 13083</h6>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="betty-contact-info2">
+                                <div class="feat-inner2"> <span class="icon et-map-pin"></span>
+                                    <div class="feat-info2">
+                                        <h5 style="color:white;">Address</h5>
+                                        <h6>Swami Vivekanand Complex, Daramali, Gujarat 383110</h6>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="betty-contact-info2">
+                                <div class="feat-inner2"> <span class="icon et-notebook"></span>
+                                    <div class="feat-info2">
+                                        <h5 style="color:white;">E-Mail</h5>
+                                        <h6>madhura65989@gmail.com</h6>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="betty-contact-info2">
+                                <div class="feat-inner2"> <span class="icon et-clock"></span>
+                                    <div class="feat-info2">
+                                        <h5 style="color:white;">Mon-Fri: 10.00 A.M - 07 P.M</h5>
+                                      <h6>Sunday: Closed</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Contact Form -->
+                        <div class="col-md-7 animate-box" data-animate-effect="fadeInLeft">
+                            <form method="post" class="row" action="contact">
+                                {% csrf_token%}
+                                <center>
+												{% if messages %}
+													{% for msg in messages %}
+															<script>
+    															alert('{{ msg }}');
+															</script>
+
+													{% endfor %}
+												{% endif%}
+									</center>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <input type="text" name="name" class="form-control" placeholder="Name" required> </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <input type="text" name="phone" class="form-control" placeholder="Phone"> </div>
+                                </div>
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <textarea name="message" name="message" id="message" cols="30" rows="20" class="form-control" placeholder="Message"></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <input type="submit" class="btn btn-contact" value="Send Message">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Footer -->
+            {% include 'footer.html' %}
+    <!-- JS -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCe2q1gFSd75jKUnTDPq0nZWaMlEu6vL30"></script>
+    <script src="{% static 'js/googlemap.js' %}"></script>
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+        <script src="{% static 'js/modernizr-2.6.2.min.js' %}"></script>
+        <script src="{% static 'js/jquery.easing.1.3.js' %}"></script>
+        <script src="{% static 'js/bootstrap.min.js' %}"></script>
+        <script src="{% static 'js/jquery.waypoints.min.js' %}"></script>
+        <script src="{% static 'js/jquery.flexslider-min.js' %}"></script>
+        <script src="{% static 'js/sticky-kit.min.js' %}"></script>
+        <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+        <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+        <script src="{% static 'js/main.js' %}"></script>
+</body>
+
+<!-- Mirrored from duruthemes.com/demo/html/betty/multipage/admin_contact.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 27 Nov 2020 08:19:13 GMT -->
+</html>

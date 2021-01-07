@@ -1,0 +1,102 @@
+{% include 'header.html' %}
+{% load static %}
+
+<body>
+    <div id="betty-page"> <a href="#" class="js-betty-nav-toggle betty-nav-toggle"><i></i></a>
+        <!-- Sidebar Section -->
+        {% include 'sidebar.html' %}
+        <!-- Main Section -->
+        <div id="betty-main">
+            <!-- Contact -->
+            <div class="betty-contact">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-12 animate-box" data-animate-effect="fadeInLeft">
+                           <h2 class="betty-heading">Manage your profile</h2>
+                           <span class="heading-meta">Dulhan beauty parlour</span>
+                        </div>
+                    </div>
+                    <!-- Map Section-->
+                    <div class="map-section">
+
+                    </div>
+                    <div class="row">
+                        <!-- Contact Info -->
+                        {% for i in user%}
+                      <div class="col-md-5 mb-30 animate-box" data-animate-effect="fadeInLeft">
+                            <div class="betty-contact-info2">
+                                <div class="feat-inner2"> <span class="icon et-profile-female"></span>
+                                    <div class="feat-info2">
+                                        <h5 style="color:white;">Name</h5>
+                                        <h6>{{i.name}}</h6>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="betty-contact-info2">
+                                <div class="feat-inner2"> <span class="icon et-phone"></span>
+                                    <div class="feat-info2">
+                                        <h5 style="color:white;">Phone Text</h5>
+                                        <h6>{{i.phone}}</h6>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="betty-contact-info2">
+                                <div class="feat-inner2"> <span class="icon et-notebook"></span>
+                                    <div class="feat-info2">
+                                        <h5 style="color:white;">E-Mail</h5>
+                                        <h6>{{i.email}}</h6>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="betty-contact-info2">
+                                <div class="feat-inner2"> <span class="icon et-key"></span>
+                                    <div class="feat-info2">
+                                        <h5 style="color:white;">Password</h5>
+                                      <h6><a href="{% url 'changePassword' %}">Change Password</a> </h6>
+                                    </div>
+                                </div>
+                            </div>
+                          <br/>
+                          <br/>
+                          <br/>
+                          <br/>
+                          <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <a href="editProfile"> <input type="submit" class="btn btn-contact" value="Edit Profile"></a>
+                                    </div>
+                                </div>
+                        </div>
+                        {% endfor %}
+
+                        <!-- Contact Form -->
+                        <div class="col-md-7 animate-box" data-animate-effect="fadeInLeft">
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <img src="{% static 'images/slider/makeup.png' %}" alt="" style="height:400px; width:550px;">
+                                    </div>
+                                </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Footer -->
+            {% include 'footer.html' %}
+    <!-- JS -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCe2q1gFSd75jKUnTDPq0nZWaMlEu6vL30"></script>
+    <script src="{% static 'js/googlemap.js' %}"></script>
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+        <script src="{% static 'js/modernizr-2.6.2.min.js' %}"></script>
+        <script src="{% static 'js/jquery.easing.1.3.js' %}"></script>
+        <script src="{% static 'js/bootstrap.min.js' %}"></script>
+        <script src="{% static 'js/jquery.waypoints.min.js' %}"></script>
+        <script src="{% static 'js/jquery.flexslider-min.js' %}"></script>
+        <script src="{% static 'js/sticky-kit.min.js' %}"></script>
+        <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+        <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+        <script src="{% static 'js/main.js' %}"></script>
+</body>
+
+<!-- Mirrored from duruthemes.com/demo/html/betty/multipage/admin_contact.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 27 Nov 2020 08:19:13 GMT -->
+</html>

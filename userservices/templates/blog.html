@@ -1,0 +1,107 @@
+{% include 'header.html' %}
+{% load static %}
+
+<body>
+    <div id="betty-page"> <a href="#" class="js-betty-nav-toggle betty-nav-toggle"><i></i></a>
+        <!-- Sidebar Section -->
+       {% include 'sidebar.html' %}
+        <!-- Main Section -->
+        <div id="betty-main" >
+            <!-- Blog -->
+            <div class="betty-blog">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-12 animate-box" data-animate-effect="fadeInLeft">
+                            <h2 class="betty-heading">Our Tutorials</h2> <span class="heading-meta">Read about latest Tutorials</span> </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-8">
+                            {% for bg in blog%}
+                            <div class="blog-entry animate-box" data-animate-effect="fadeInLeft">
+                                <img src="{{bg.image.url}}" class="img-fluid" alt="" style="height: 500px; width:800px;"></a>
+                                <div class="desc"> <span><a href="#">{{bg.date}}</a></span>
+                                    <h3>{{bg.title}}</h3>
+                                    <p>{{bg.description}}</p>
+                                </div>
+                            </div>
+                            {% endfor %}
+
+                            <div class="row">
+                                <div class="col-md-12 animate-box" data-animate-effect="fadeInLeft">
+                                    <!-- Pagination -->
+                                    <ul class="betty-pagination-wrap text-center">
+                                        <li><a href=""><i class="ti-arrow-left"></i></a></li>
+                                        <li><a href="">1</a></li>
+                                        <li><a href="" class="active">2</a></li>
+                                        <li><a href="">3</a></li>
+                                        <li><a href=""><i class="ti-arrow-right"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Sidebar -->
+                        <div class="col-md-4 animate-box" data-animate-effect="fadeInLeft">
+                            <div class="betty-sidebar-part">
+                               
+                                <div class="betty-sidebar-block betty-sidebar-block-categories">
+                                    <div class="betty-sidebar-block-title"> Categories </div>
+                                    <div class="betty-sidebar-block-content">
+                                        <ul class="ul1">
+                                            <li><a href="">Makeup</a></li>
+                                            <li><a href="">Hairstyle</a></li>
+                                            <li><a href="">Facial</a></li>
+                                            <li><a href="">Wax</a></li>
+                                            <li><a href="">Threading</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="betty-sidebar-block betty-sidebar-block-latest-posts">
+                                    <div class="betty-sidebar-block-title"> Latest Posts </div>
+                                    <div class="betty-sidebar-block-content">
+                                        {% for bg in blog%}
+                                        <div class="latest">
+                                            <a href="" class="clearfix">
+                                                <div class="txt1">{{bg.title}}</div>
+                                                <div class="txt2">{{bg.date}}</div>
+                                            </a>
+                                        </div>
+                                        {% endfor %}
+                                        
+                                    </div>
+                                </div>
+                                <div class="betty-sidebar-block betty-sidebar-block-tags">
+                                    <div class="betty-sidebar-block-title"> Tags </div>
+                                    <div class="betty-sidebar-block-content">
+                                        <ul class="tags clearfix">
+                                            <li><a href="">Makeup</a></li>
+                                            <li><a href="">Hairstyle</a></li>
+                                            <li><a href="">Facial</a></li>
+                                            <li><a href="">Wax</a></li>
+                                            <li><a href="">Threading</a></li>
+                                        
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Footer -->
+           {% include 'footer.html' %}
+        <!-- Js -->
+        <script src="{% static 'js/jquery.min.js' %}"></script>
+        <script src="{% static 'js/modernizr-2.6.2.min.js' %}"></script>
+        <script src="{% static 'js/jquery.easing.1.3.js' %}"></script>
+        <script src="{% static 'js/bootstrap.min.js' %}"></script>
+        <script src="{% static 'js/jquery.waypoints.min.js' %}"></script>
+        <script src="{% static 'js/jquery.flexslider-min.js' %}"></script>
+        <script src="{% static 'js/sticky-kit.min.js' %}"></script>
+        <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+        <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+        <script src="{% static 'js/main.js' %}"></script>
+    </div>
+</body>
+
+<!-- Mirrored from duruthemes.com/demo/html/betty/multipage/blog.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 27 Nov 2020 08:19:13 GMT -->
+</html>

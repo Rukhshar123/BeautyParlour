@@ -1,0 +1,74 @@
+ <div class="sidebar">
+                            <ul class="widget widget-menu unstyled">
+                                <li class="active"><a href="{% url 'admin_home' %}"><i class="menu-icon icon-dashboard"></i>Dashboard
+                                </a></li>
+                                <li><a class="collapsed" data-toggle="collapse" href="#about"><i class="menu-icon icon-paste">
+                                </i><i class="icon-chevron-down pull-right"></i><i class="icon-chevron-up pull-right">
+                                </i>About Us </a>
+                                    <ul id="about" class="collapse unstyled">
+                                        <li><a href="{% url 'admin_about_add' %}"><i class="icon-inbox"></i>Add </a></li>
+                                        <li><a href="{% url 'admin_all_about' %}"><i class="icon-inbox"></i>Manage </a></li>
+                                    </ul>
+                                </li>
+                                <li><a class="collapsed" data-toggle="collapse" href="#services"><i class="menu-icon icon-tasks">
+                                </i><i class="icon-chevron-down pull-right"></i><i class="icon-chevron-up pull-right">
+                                </i>Services </a>
+                                    <ul id="services" class="collapse unstyled">
+                                        <li><a href="{% url 'admin_services_add' %}"><i class="icon-inbox"></i>Add </a></li>
+                                        <li><a href="{% url 'admin_services_all' %}"><i class="icon-inbox"></i>Manage </a></li>
+                                    </ul>
+                                </li>
+                                <li><a class="collapsed" data-toggle="collapse" href="#reviews"><i class="menu-icon icon-comments">
+                                </i><i class="icon-chevron-down pull-right"></i><i class="icon-chevron-up pull-right">
+                                </i>Reviews </a>
+                                    <ul id="reviews" class="collapse unstyled">
+                                        <li><a href="{% url 'admin_reviews_add' %}"><i class="icon-inbox"></i>Add </a></li>
+                                        <li><a href="{% url 'admin_reviews_all' %}"><i class="icon-inbox"></i>Manage </a></li>
+                                    </ul>
+                                </li>
+                                <li><a class="collapsed" data-toggle="collapse" href="#team"><i class="menu-icon icon-group">
+                                </i><i class="icon-chevron-down pull-right"></i><i class="icon-chevron-up pull-right">
+                                </i>Team </a>
+                                    <ul id="team" class="collapse unstyled">
+                                        <li><a href="{% url 'admin_team_add' %}"><i class="icon-inbox"></i>Add </a></li>
+                                        <li><a href="{% url 'admin_team_all' %}"><i class="icon-inbox"></i>Manage </a></li>
+                                    </ul>
+                                </li>
+                                <li><a class="collapsed" data-toggle="collapse" href="#makeup"><i class="menu-icon icon-heart">
+                                </i><i class="icon-chevron-down pull-right"></i><i class="icon-chevron-up pull-right">
+                                </i>MakeUp </a>
+                                    <ul id="makeup" class="collapse unstyled">
+                                        <li><a href="{% url 'admin_makeup_add' %}"><i class="icon-inbox"></i>Add </a></li>
+                                        <li><a href="{% url 'admin_makeup_all' %}"><i class="icon-inbox"></i>Manage </a></li>
+                                    </ul>
+                                </li>
+                                <li><a class="collapsed" data-toggle="collapse" href="#latestnews"><i class="menu-icon icon-bullhorn">
+                                </i><i class="icon-chevron-down pull-right"></i><i class="icon-chevron-up pull-right">
+                                </i>Latest News </a>
+                                    <ul id="latestnews" class="collapse unstyled">
+                                        <li><a href="{% url 'admin_news_add' %}"><i class="icon-inbox"></i>Add </a></li>
+                                        <li><a href="{% url 'admin_news_all' %}"><i class="icon-inbox"></i>Manage </a></li>
+                                    </ul>
+                                </li>
+                                  <li><a class="collapsed" data-toggle="collapse" href="#brands"><i class="menu-icon icon-list">
+                                </i><i class="icon-chevron-down pull-right"></i><i class="icon-chevron-up pull-right">
+                                </i>Brands</a>
+                                    <ul id="brands" class="collapse unstyled">
+                                        <li><a href="{% url 'admin_brand_add' %}"><i class="icon-inbox"></i>Add </a></li>
+                                        <li><a href="{% url 'admin_brand_all' %}"><i class="icon-inbox"></i>Manage </a></li>
+                                    </ul>
+                                </li>
+                                <li><a class="collapsed" data-toggle="collapse" href="#blogs"><i class="menu-icon icon-bookmark">
+                                </i><i class="icon-chevron-down pull-right"></i><i class="icon-chevron-up pull-right">
+                                </i>Blogs</a>
+                                    <ul id="blogs" class="collapse unstyled">
+                                        <li><a href="{% url 'admin_blog_add' %}"><i class="icon-inbox"></i>Add </a></li>
+                                        <li><a href="{% url 'admin_blog_all' %}"><i class="icon-inbox"></i>Manage </a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="{% url 'admin_appoinment_all' %}"><i class="menu-icon icon-calendar"></i>Appoinments </a></li>
+                                 <li><a href="{% url 'admin_contact' %}"><i class="menu-icon icon-inbox"></i>Inbox</a></li>
+
+                                         <li><a href="{% url 'admin_logout' %}"><i class="menu-icon icon-signout"></i>Logout </a></li>
+                            </ul>
+                        </div>

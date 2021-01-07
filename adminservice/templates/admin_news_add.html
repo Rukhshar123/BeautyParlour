@@ -1,0 +1,88 @@
+{% include 'admin_header.html' %}
+{% load static %}
+<body>
+
+
+	<div class="wrapper">
+		<div class="container">
+			<div class="row">
+				<div class="span3">
+					{% include 'admin_sidebar.html' %}<!--/.sidebar-->
+				</div><!--/.span3-->
+
+
+				<div class="span9">
+
+					<div class="content">
+
+						<div class="module">
+							<div class="module-head">
+								<h3>Latest News</h3>
+							</div>
+							<div class="module-body">
+									<br />
+
+
+									<form class="form-horizontal row-fluid" method="post" action="{% url 'admin_news_add' %}" enctype="multipart/form-data" >
+											{% csrf_token %}
+											<center>
+												{% if messages %}
+													{% for msg in messages %}
+														<script>
+															alert('{{msg}}');
+														</script>
+													{% endfor%}
+												{% endif %}
+											</center>
+
+										<div class="control-group">
+											<label class="control-label" >News Header:</label>
+											<div class="controls">
+												<input type="text" id="header" name="header" class="span8" placeholder="Enter service name" required>
+											</div>
+										</div>
+
+										<div class="control-group">
+											<label class="control-label" >Description:</label>
+											<div class="controls">
+												<textarea id="description" name="description" rows="10" cols="10" class="span8" placeholder="Enter Description..." required></textarea>
+											</div>
+										</div>
+										<div class="control-group">
+											<label class="control-label" >News Date:</label>
+											<div class="controls">
+												<input type="date" id="date" name="date" class="span8" required>
+											</div>
+										</div>
+
+
+										<div class="control-group">
+											<label class="control-label">Select Image</label>
+											<div class="controls">
+												<input type="file" id="image" name="image" required class="span8">											</div>
+										</div>
+
+										<div class="control-group">
+											<div class="controls">
+												<button type="submit" class="btn">Submit</button>
+											</div>
+										</div>
+									</form>
+							</div>
+						</div>
+
+
+
+					</div><!--/.content-->
+				</div><!--/.span9-->
+			</div>
+		</div><!--/.container-->
+	</div><!--/.wrapper-->
+
+	{% include 'admin_footer.html' %}
+
+	<script src="{% static 'scripts/jquery-1.9.1.min.js' %}" type="text/javascript"></script>
+	<script src="{% static 'scripts/jquery-ui-1.10.1.custom.min.js' %}" type="text/javascript"></script>
+	<script src="{% static 'bootstrap/js/bootstrap.min.js' %}" type="text/javascript"></script>
+	<script src="{% static 'scripts/flot/jquery.flot.js' %}" type="text/javascript"></script>
+</body>
